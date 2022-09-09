@@ -12,6 +12,8 @@ int main(void)
 
 	for (i = 0; i <= 8; i++)
 	{
+		if (i < j)
+		{
 		for (j = 1; j <= 9; j++)
 		{
 			putchar(i + '0');
@@ -21,6 +23,7 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
+		}
 		}
 	}
 	putchar('\n');
