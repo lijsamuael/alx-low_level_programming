@@ -3,26 +3,28 @@
 /**
  * print_triangle - print trialgles usin '#'
  * @size: the size of the trangle
- * Return: void
+ * Return: ivoid
  */
 void print_triangle(int size)
 {
-	int length, width;
+	int i;
+	int j;
+	int k;
 
-	if (size <= 0)
-		_putchar('\n');
-	else
-	for (length = 0; length <= size; length++)
+	for (i = 0; i < size; i++)
 	{
-		for (width = size; width > length; width--)
-		{
-			_putchar(' ');
-		}
-		for (width = 0; width < length; width++)
-		{
-			_putchar('#');
-		}
-		if (length != size)
-			_putchar('\n');
+	for (k = size - 1 - i; k > 0; k--)
+	{
+	_putchar(' ');
+	}
+	for (j = 0; j <= i; j++)
+	{
+	_putchar('#');
+	}
+	_putchar('\n');
+	}
+	if (size <= 0)
+	{
+	_putchar('\n');
 	}
 }
