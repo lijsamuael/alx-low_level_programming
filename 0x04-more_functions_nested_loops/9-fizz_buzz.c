@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - entry of the program
@@ -20,6 +21,6 @@ int main(void)
 		else
 			printf("%d%s", i, " ");
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
