@@ -20,5 +20,6 @@ int main(void)
 		else
 			printf("%d%s", i, " ");
 	}
+	putchar('\n');
 	return (0);
 }
