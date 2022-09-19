@@ -1,23 +1,24 @@
 /**
- * _strcpy - copies a string from one pointer to another
- *	including the terminating null byte (\0)
+ * _atoi - converts a string to an integer
  *
- * @src: source of string parameter input
- * @dest: destination of string
+ * @s: string input parameter
  *
- * Return: pointer to dest input parameter
+ * Return: converted integer from string
 */
 
-char *_strcpy(char *dest, char *src)
+int _atoi(char *s)
 {
-	int a, b = 0;
+	unsigned int num = 0;
+	int sign = 1;
 
-	for (a = 0; src[a] != '\0'; ++a)
-	{
-		dest[b] = src[a];
-		++b;
-	}
-	dest[b] = '\0';
+	do {
+		if (*s == '-')
+			sign *= -1;
+		else if (*s >= '0' && *s <= '9')
+			num = (num * 10) + (*s - '0');
+		else if (num > 0)
+			break;
+	} while (*s++);
 
-	return (dest);
+	return (num * sign);
 }
