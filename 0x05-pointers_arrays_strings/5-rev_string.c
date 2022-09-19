@@ -7,13 +7,15 @@
  */
 void rev_string(char *s)
 {
+	char rev[500];
+
 	int i;
 
 	int len;
 
-	char rev[10];
-
 	len = strlen(s) - 1;
+
+	strcpy(rev, s);
 
 	for (i = len; i >= 0; i--)
 	{
