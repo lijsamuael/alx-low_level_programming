@@ -19,7 +19,7 @@ void puts_half(char *str)
 	{
 		if (len % 2 == 0 || i != len)
 			_putchar(str[i]);
-		else if (len % 2 == 1)
+		else if (len % 2 == 1 || i + 1 != len)
 			_putchar(str[i + 1]);
 
 	}
