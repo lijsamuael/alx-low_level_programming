@@ -6,10 +6,13 @@
  */
 int main(void)
 {
-int num;
-
+int i;
+char n;
+for (i = 0; i < 10; i++)
+{
 srand(time(0));
-num = rand();
-printf("%i\n", num);
+n = rand() - RAND_MAX / 2;
+printf("%c", n);
+}
 return (0);
 }
