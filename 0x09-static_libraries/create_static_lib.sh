@@ -1,3 +1,2 @@
-gcc -Wall -pedantic -Werror -Wextra -c *.c
+gcc -c *.c -fpic
 ar rc liball.a *.o
-ranlib libwork.a
