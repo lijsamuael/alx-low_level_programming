@@ -20,9 +20,9 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 		for (i = 0; i < size; i++)
 		{
+			count = cmp(array[i]);
 			if (count != 0)
-				return (i - 1);
-			count = (cmp(array[i]));
+				return (i);
 		}
 	}
 	return (-1);
