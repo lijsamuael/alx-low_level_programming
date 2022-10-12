@@ -20,8 +20,8 @@ int (*get_op_func(char *s))(int, int)
 
 	for (i = 0; ops[i].op != NULL; i++)
 	{
-		if (strcmp(s, ops[i].op) == 0)
+		if (s[0] == ops->op[i])
 			break;
 	}
-	return (ops[i].f);
+	return (ops[i / 2].f);
 }
