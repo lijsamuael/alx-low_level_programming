@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * print_list - print list.
- * @h: list.
- * Return: The elements linked.
+ * print_list - print each element of a list.
+ * @h: My pointer to list.
+ * Return: The elements that are linked.
  */
 size_t print_list(const list_t *h)
 {
