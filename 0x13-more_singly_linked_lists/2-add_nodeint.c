@@ -1,0 +1,24 @@
+#include "lists.h"
+/**
+ * add_nodeint - adds node a t the beggineing of ghe function
+ * @head: the starting node of the list
+ * @n: the number to addied as data on the node
+ * Return: the address of the new element
+ */
+listint_t *add_nodeint(listint_t **head, __attribute__((unused)) const int n)
+{
+	listint_t *temp;
+
+	temp = NULL;
+	if (head == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		temp->next = *head;
+		*head = temp;
+	}
+	return (*head);
+
+}
