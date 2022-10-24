@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * add_nodeint - adds node a t the beggineing of ghe function
  * @head: the starting node of the list
@@ -7,18 +8,25 @@
  */
 listint_t *add_nodeint(listint_t **head, __attribute__((unused)) const int n)
 {
-	listint_t *temp;
+	listint_t *new;
 
-	temp = NULL;
+	new = malloc(sizeof(listint_t));
+	new->n = n;
+	new->next = NULL;
+	
+	if (new == NULL)
+		return (NULL);
+
 	if (head == NULL)
 	{
-		return (NULL);
+		*head = new;
+		return (new);
 	}
 	else
 	{
-		temp->next = *head;
-		*head = temp;
+		new->next = *head;
+		*head = new;
 	}
-	return (*head);
+	return (new);
 
 }
