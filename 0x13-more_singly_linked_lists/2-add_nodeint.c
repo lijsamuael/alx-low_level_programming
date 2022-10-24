@@ -17,10 +17,7 @@ listint_t *add_nodeint(listint_t **head, __attribute__((unused)) const int n)
 		return (NULL);
 
 	if (head == NULL)
-	{
-		*head = new;
-		return (new);
-	}
+		return (NULL);
 	else
 	{
 		new->next = *head;
