@@ -1,41 +1,37 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * free_listint_safe - Frees a linked list containing integers
+ * @h: Address of the first item in the list
  *
- * Return: Always 0.
+ * Return: Length of the freed list
  */
-int main(void)
+size_t free_listint_safe(listint_t **h)
 {
-    listint_t *head;
-    listint_t *head2;
-    listint_t *node;
+	listint_t *node = *h, *next;
+	size_t len = 0;
 
-    head2 = NULL;
-    add_nodeint(&head2, 0);
-    add_nodeint(&head2, 1);
-    add_nodeint(&head2, 2);
-    add_nodeint(&head2, 3);
-    add_nodeint(&head2, 4);
-    add_nodeint(&head2, 98);
-    add_nodeint(&head2, 402);
-    add_nodeint(&head2, 1024);
-    print_listint_safe(head2);
-    head = NULL;
-    node = add_nodeint(&head, 0);
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 2);
-    add_nodeint(&head, 3);
-    add_nodeint(&head, 4);
-    node->next = add_nodeint(&head, 98);
-    add_nodeint(&head, 402);
-    add_nodeint(&head, 1024);
-    print_listint_safe(head);
-    free_listint_safe(&head2);
-    free_listint_safe(&head);
-    printf("%p, %p\n", (void *)head2, (void *)head);
-    return (0);
+	if (!h || !*h)
+		return (0);
+
+	while (node)
+	{
+		next = node->next;
+
+		free(node);
+		len++;
+
+		if ((void *)node <= (void *)next)
+		{
+			*h = NULL;
+			break;
+		}
+
+		node = next;
+	}
+
+	*h = NULL;
+
+	return (len);
 }
