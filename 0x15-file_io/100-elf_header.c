@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <elf.h>
 
 int main(int argc, char **argv)
